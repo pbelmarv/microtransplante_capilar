@@ -1,7 +1,8 @@
 node_modules/
 .qodo/
 main-clean.js
+main_.js
 main-final.js
 main-ultra.js
+main-loader.js
 main-loader copy.js
-main.js
