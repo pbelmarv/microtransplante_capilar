@@ -1,37 +1,30 @@
 /**
  * DR. FELIPE COSTA - MICROTRANSPLANTE CAPILAR
- * JavaScript FINAL ULTRA ROBUSTO - Versión Definitiva
+ * JavaScript LIMPIO Y FUNCIONAL
  */
-
-console.log('🚀 INICIANDO DR. FELIPE COSTA WEBSITE - VERSIÓN DEFINITIVA');
 
 // VARIABLES GLOBALES
 let isLoaded = false;
 let isMobileMenuOpen = false;
 
+// =============================================
 // 1. LOADER FUNCTIONALITY
+// =============================================
 function initLoader() {
-    console.log('⏳ Inicializando loader...');
-    
     const loader = document.getElementById('loading-screen');
     if (!loader) {
-        console.warn('⚠️ Loading screen no encontrado');
         forceContentVisibility();
         isLoaded = true;
         return;
     }
     
-    // Asegurar que el loader sea visible inicialmente
+    // Configuración inicial
     loader.style.display = 'flex';
     loader.style.opacity = '1';
     loader.style.visibility = 'visible';
-    
-    // Ocultar contenido principal mientras carga
     document.body.style.overflow = 'hidden';
     
     function hideLoader() {
-        console.log('🎯 Ocultando loader...');
-        
         if (loader) {
             loader.style.opacity = '0';
             loader.style.visibility = 'hidden';
@@ -44,21 +37,14 @@ function initLoader() {
                 document.body.style.overflow = 'auto';
                 document.body.classList.add('content-loaded');
                 isLoaded = true;
-                
-                // Forzar visibilidad del contenido
                 forceContentVisibility();
-                
-                console.log('✅ Loader ocultado y contenido visible');
             }, 300);
         }
     }
     
-    // MÚLTIPLES FALLBACKS PARA OCULTAR EL LOADER
-    
-    // 1. Después de tiempo corto
+    // Múltiples formas de ocultar el loader
     setTimeout(hideLoader, 1200);
     
-    // 2. Cuando todo esté cargado
     if (document.readyState === 'complete') {
         setTimeout(hideLoader, 500);
     } else {
@@ -67,36 +53,28 @@ function initLoader() {
         });
     }
     
-    // 3. Fallback de emergencia
+    // Fallbacks
     setTimeout(() => {
         if (!isLoaded) {
-            console.log('🚨 FALLBACK DE EMERGENCIA - Forzando ocultación del loader');
             hideLoader();
         }
     }, 2500);
     
-    // 4. Click para saltarse
-    loader.addEventListener('click', () => {
-        console.log('🖱️ Click en loader - ocultando');
-        hideLoader();
-    });
+    loader.addEventListener('click', hideLoader);
     
-    // 5. Fallback con tecla
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') {
             if (!isLoaded) {
-                console.log('⌨️ Tecla presionada - ocultando loader');
                 hideLoader();
             }
         }
     });
 }
 
-// 2. FORZAR VISIBILIDAD DEL CONTENIDO
+// =============================================
+// 2. CONTENT VISIBILITY
+// =============================================
 function forceContentVisibility() {
-    console.log('👁️ Forzando visibilidad del contenido...');
-    
-    // Elementos principales
     const mainElements = [
         'section', '.hero-section', '.container', 'header', 'footer',
         '.top-contact-bar', '.header-nav', 'main', 'nav'
@@ -110,21 +88,16 @@ function forceContentVisibility() {
         });
     });
     
-    // Forzar visibilidad de botones flotantes
     forceFloatingButtons();
-    
-    console.log('✅ Contenido principal forzado a ser visible');
 }
 
-// 3. BOTONES FLOTANTES - ULTRA ROBUSTO
+// =============================================
+// 3. FLOATING BUTTONS
+// =============================================
 function forceFloatingButtons() {
-    console.log('🔘 Forzando visibilidad de botones flotantes...');
-    
     // WhatsApp Button
     const whatsappBtn = document.getElementById('whatsapp-float');
     if (whatsappBtn) {
-        console.log('📱 Configurando botón WhatsApp...');
-        
         whatsappBtn.style.position = 'fixed';
         whatsappBtn.style.bottom = '1.5rem';
         whatsappBtn.style.right = '1.5rem';
@@ -144,17 +117,11 @@ function forceFloatingButtons() {
         whatsappBtn.style.opacity = '1';
         whatsappBtn.style.visibility = 'visible';
         whatsappBtn.style.pointerEvents = 'auto';
-        
-        console.log('✅ Botón WhatsApp configurado');
-    } else {
-        console.error('❌ Botón WhatsApp no encontrado');
     }
     
     // Back to Top Button
     const backToTopBtn = document.getElementById('back-to-top');
     if (backToTopBtn) {
-        console.log('⬆️ Configurando botón Back to Top...');
-        
         backToTopBtn.style.position = 'fixed';
         backToTopBtn.style.bottom = '6rem';
         backToTopBtn.style.right = '1.5rem';
@@ -176,45 +143,28 @@ function forceFloatingButtons() {
         backToTopBtn.style.visibility = 'visible';
         backToTopBtn.style.pointerEvents = 'auto';
         
-        // Click handler
         backToTopBtn.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
         });
-        
-        console.log('✅ Botón Back to Top configurado');
-    } else {
-        console.error('❌ Botón Back to Top no encontrado');
     }
 }
 
-// 4. MENÚ MÓVIL/TABLET - ULTRA ROBUSTO
+// =============================================
+// 4. MOBILE MENU
+// =============================================
 function initMobileMenu() {
-    console.log('📱 Inicializando menú móvil/tablet...');
-    
     const btn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');
     const links = document.querySelectorAll('.mobile-menu-link');
     
-    console.log('📱 Elementos encontrados:', {
-        btn: !!btn,
-        menu: !!menu,
-        linksCount: links.length
-    });
-    
-    if (!btn) {
-        console.error('❌ Botón del menú móvil no encontrado');
+    if (!btn || !menu) {
         return;
     }
     
-    if (!menu) {
-        console.error('❌ Menú móvil no encontrado');
-        return;
-    }
-    
-    // Configuración inicial ULTRA FORZADA del menú
+    // Configuración inicial
     menu.style.position = 'fixed';
     menu.style.top = '0';
     menu.style.left = '0';
@@ -232,61 +182,30 @@ function initMobileMenu() {
     menu.style.visibility = 'visible';
     menu.style.opacity = '1';
     
-    // Estado inicial
     isMobileMenuOpen = false;
-    menu.classList.add('closed');
-    menu.classList.remove('open');
-    
-    // Configurar enlaces del menú
-    links.forEach((link, index) => {
-        link.style.display = 'block';
-        link.style.fontSize = '2rem';
-        link.style.color = '#4a5f74';
-        link.style.textDecoration = 'none';
-        link.style.fontWeight = '500';
-        link.style.margin = '1rem 0';
-        link.style.padding = '0.5rem 1rem';
-        link.style.borderRadius = '0.5rem';
-        link.style.transition = 'all 0.3s ease';
-        console.log(`📱 Link ${index} configurado:`, link.textContent);
-    });
     
     // Toggle del menú
     btn.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
         
-        console.log('🔄 Toggle menú móvil - Estado actual:', isMobileMenuOpen);
-        
         if (isMobileMenuOpen) {
-            // Cerrar
             menu.style.transform = 'translateX(100%)';
-            menu.classList.remove('open');
-            menu.classList.add('closed');
             document.body.style.overflow = 'auto';
             isMobileMenuOpen = false;
-            console.log('📴 Menú cerrado');
         } else {
-            // Abrir
             menu.style.transform = 'translateX(0)';
-            menu.classList.remove('closed');
-            menu.classList.add('open');
             document.body.style.overflow = 'hidden';
             isMobileMenuOpen = true;
-            console.log('📖 Menú abierto');
         }
     });
     
     // Cerrar al hacer clic en enlaces
-    links.forEach((link, index) => {
-        link.addEventListener('click', function(e) {
-            console.log(`🔗 Click en enlace ${index}: ${link.textContent}`);
+    links.forEach((link) => {
+        link.addEventListener('click', function() {
             menu.style.transform = 'translateX(100%)';
-            menu.classList.remove('open');
-            menu.classList.add('closed');
             document.body.style.overflow = 'auto';
             isMobileMenuOpen = false;
-            console.log('🔗 Menú cerrado por enlace');
         });
     });
     
@@ -294,26 +213,19 @@ function initMobileMenu() {
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && isMobileMenuOpen) {
             menu.style.transform = 'translateX(100%)';
-            menu.classList.remove('open');
-            menu.classList.add('closed');
             document.body.style.overflow = 'auto';
             isMobileMenuOpen = false;
-            console.log('⌨️ Menú cerrado con ESC');
         }
     });
-    
-    console.log('✅ Menú móvil/tablet inicializado correctamente');
 }
 
-// 5. FAQ - ULTRA ROBUSTO
+// =============================================
+// 5. FAQ - FUNCIONAL Y LIMPIO
+// =============================================
 function initFAQ() {
-    console.log('❓ Inicializando FAQ...');
-    
     const faqItems = document.querySelectorAll('.faq-item');
-    console.log('❓ FAQ items encontrados:', faqItems.length);
     
     if (faqItems.length === 0) {
-        console.error('❌ No se encontraron elementos FAQ');
         return;
     }
     
@@ -323,109 +235,124 @@ function initFAQ() {
         const icon = item.querySelector('.faq-icon');
         
         if (!question || !answer || !icon) {
-            console.warn(`⚠️ FAQ ${index}: elementos faltantes`);
             return;
         }
         
-        // Configuración inicial forzada
+        // Configuración inicial del answer
         answer.style.display = 'none';
         answer.style.opacity = '0';
-        answer.style.padding = '1.5rem';
-        answer.style.background = '#f8f9fa';
-        answer.style.borderRadius = '0.5rem';
-        answer.style.marginTop = '0.5rem';
-        answer.style.lineHeight = '1.6';
-        answer.style.border = '1px solid #e5e7eb';
+        answer.style.maxHeight = '0';
+        answer.style.overflow = 'hidden';
         answer.style.transition = 'all 0.3s ease';
+        answer.style.background = '#f8f9fa';
+        answer.style.marginTop = '0.5rem';
+        answer.style.borderRadius = '0.5rem';
+        answer.style.border = '1px solid #e5e7eb';
+        answer.style.padding = '1.5rem';
+        answer.style.lineHeight = '1.6';
+        answer.style.color = '#6b7280';
+        answer.style.fontSize = '1rem';
         
-        icon.style.transition = 'transform 0.3s ease';
+        // Configuración inicial del icono
         icon.style.transform = 'rotate(0deg)';
-        icon.style.fontSize = '1.2rem';
-        icon.style.color = '#4a5f74';
+        icon.style.transition = 'transform 0.3s ease';
         
-        question.style.cursor = 'pointer';
-        question.style.width = '100%';
-        question.style.padding = '1.5rem';
-        question.style.background = 'white';
-        question.style.border = '1px solid #e5e7eb';
-        question.style.borderRadius = '0.75rem';
-        question.style.display = 'flex';
-        question.style.justifyContent = 'space-between';
-        question.style.alignItems = 'center';
-        question.style.transition = 'all 0.3s ease';
-        question.style.textAlign = 'left';
+        // Agregar data attribute para tracking
+        item.setAttribute('data-faq-index', index);
+        answer.setAttribute('data-faq-open', 'false');
         
-        // Hover effect para la pregunta
-        question.addEventListener('mouseenter', () => {
-            question.style.background = '#f8f9fa';
-            question.style.borderColor = '#4a5f74';
-        });
-        
-        question.addEventListener('mouseleave', () => {
-            question.style.background = 'white';
-            question.style.borderColor = '#e5e7eb';
-        });
-        
-        // Event listener ultra robusto
+        // Event listener para el click
         question.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
             
-            console.log(`🔄 FAQ ${index}: click detectado`);
+            const isCurrentlyOpen = answer.getAttribute('data-faq-open') === 'true';
             
-            // Cerrar todos los otros FAQs
-            faqItems.forEach((otherItem, otherIndex) => {
-                if (otherIndex !== index) {
-                    const otherAnswer = otherItem.querySelector('.faq-answer');
-                    const otherIcon = otherItem.querySelector('.faq-icon');
-                    
-                    if (otherAnswer && otherIcon) {
-                        otherAnswer.style.display = 'none';
-                        otherAnswer.style.opacity = '0';
-                        otherIcon.style.transform = 'rotate(0deg)';
-                    }
+            // Cerrar todas las respuestas primero
+            faqItems.forEach((otherItem) => {
+                const otherAnswer = otherItem.querySelector('.faq-answer');
+                const otherIcon = otherItem.querySelector('.faq-icon');
+                
+                if (otherAnswer && otherIcon) {
+                    otherAnswer.style.display = 'none';
+                    otherAnswer.style.opacity = '0';
+                    otherAnswer.style.maxHeight = '0';
+                    otherAnswer.setAttribute('data-faq-open', 'false');
+                    otherIcon.style.transform = 'rotate(0deg)';
                 }
             });
             
-            // Toggle del FAQ actual
-            const isOpen = answer.style.display === 'block';
-            
-            if (isOpen) {
-                // Cerrar
-                answer.style.opacity = '0';
-                setTimeout(() => {
-                    answer.style.display = 'none';
-                }, 300);
-                icon.style.transform = 'rotate(0deg)';
-                console.log(`📝 FAQ ${index}: cerrado`);
-            } else {
-                // Abrir
+            // Si la pregunta no estaba abierta, abrirla
+            if (!isCurrentlyOpen) {
                 answer.style.display = 'block';
+                answer.style.maxHeight = '500px';
+                answer.setAttribute('data-faq-open', 'true');
+                
+                // Delay para la animación suave
                 setTimeout(() => {
                     answer.style.opacity = '1';
-                }, 10);
+                }, 50);
+                
                 icon.style.transform = 'rotate(180deg)';
-                console.log(`📖 FAQ ${index}: abierto`);
             }
         });
-        
-        console.log(`✅ FAQ ${index} configurado correctamente`);
     });
-    
-    console.log('✅ FAQ completamente inicializado');
 }
 
 // =============================================
-// 6. HEADER STICKY
+// 6. GALLERY OVERLAYS
+// =============================================
+function initGalleryOverlays() {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    if (galleryItems.length === 0) {
+        return;
+    }
+    
+    galleryItems.forEach((item) => {
+        const overlay = item.querySelector('.gallery-overlay');
+        
+        if (!overlay) {
+            return;
+        }
+        
+        // Configuración inicial
+        overlay.style.position = 'absolute';
+        overlay.style.top = '0';
+        overlay.style.left = '0';
+        overlay.style.right = '0';
+        overlay.style.bottom = '0';
+        overlay.style.background = 'rgba(74, 95, 116, 0.9)';
+        overlay.style.display = 'flex';
+        overlay.style.alignItems = 'center';
+        overlay.style.justifyContent = 'center';
+        overlay.style.opacity = '0';
+        overlay.style.visibility = 'hidden';
+        overlay.style.transition = 'all 0.3s ease';
+        overlay.style.backdropFilter = 'blur(5px)';
+        overlay.style.zIndex = '10';
+        
+        // Event listeners
+        item.addEventListener('mouseenter', function() {
+            overlay.style.opacity = '1';
+            overlay.style.visibility = 'visible';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            overlay.style.opacity = '0';
+            overlay.style.visibility = 'hidden';
+        });
+    });
+}
+
+// =============================================
+// 7. STICKY HEADER
 // =============================================
 function initStickyHeader() {
-    console.log('📌 Inicializando header sticky...');
-    
     const header = document.querySelector('.header-nav');
     const topBar = document.querySelector('.top-contact-bar');
     
     if (!header || !topBar) {
-        console.warn('⚠️ Header o top bar no encontrados');
         return;
     }
     
@@ -442,17 +369,13 @@ function initStickyHeader() {
     }
     
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Ejecutar una vez al inicio
-    
-    console.log('✅ Header sticky inicializado');
+    handleScroll();
 }
 
 // =============================================
-// 7. SMOOTH SCROLL
+// 8. SMOOTH SCROLL
 // =============================================
 function initSmoothScroll() {
-    console.log('🔄 Inicializando smooth scroll...');
-    
     document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -468,71 +391,59 @@ function initSmoothScroll() {
             }
         });
     });
-    
-    console.log('✅ Smooth scroll inicializado');
 }
 
 // =============================================
-// 8. INICIALIZACIÓN PRINCIPAL
+// 9. MAIN INITIALIZATION
 // =============================================
 function initializeApp() {
-    console.log('🎯 Inicializando aplicación completa...');
-    
-    // Primero el loader
     initLoader();
     
-    // Después de un pequeño delay, inicializar todo lo demás
     setTimeout(() => {
         initMobileMenu();
         initFAQ();
+        initGalleryOverlays();
         initStickyHeader();
         initSmoothScroll();
         forceFloatingButtons();
         
-        // Forzar visibilidad cada segundo durante los primeros 5 segundos
-        let forcedVisibilityCount = 0;
-        const forceInterval = setInterval(() => {
+        // Forzar visibilidad periódicamente
+        let count = 0;
+        const interval = setInterval(() => {
             forceContentVisibility();
             forceFloatingButtons();
-            forcedVisibilityCount++;
+            count++;
             
-            if (forcedVisibilityCount >= 5) {
-                clearInterval(forceInterval);
+            if (count >= 3) {
+                clearInterval(interval);
             }
         }, 1000);
-        
-        console.log('✅ Aplicación completamente inicializada');
-    }, 100);
+    }, 500);
 }
 
 // =============================================
-// 9. EVENT LISTENERS PRINCIPALES
+// EVENT LISTENERS
 // =============================================
 document.addEventListener('DOMContentLoaded', initializeApp);
 
 window.addEventListener('load', () => {
-    console.log('📄 Página completamente cargada');
     setTimeout(() => {
         forceContentVisibility();
         forceFloatingButtons();
     }, 500);
 });
 
-// Fallback de seguridad
+// Fallback
 setTimeout(() => {
     if (!isLoaded) {
-        console.log('🚨 Fallback de seguridad activado');
         initializeApp();
     }
 }, 3000);
 
-// =============================================
-// FALLBACK DE EMERGENCIA PARA EL LOADER
-// =============================================
+// Fallbacks adicionales para el loader
 setTimeout(() => {
     const loader = document.getElementById('loading-screen');
     if (loader && loader.style.display !== 'none') {
-        console.log('🚨 FALLBACK CRÍTICO - Ocultando loader por fuerza');
         loader.style.display = 'none';
         loader.style.opacity = '0';
         loader.style.visibility = 'hidden';
@@ -542,12 +453,10 @@ setTimeout(() => {
     }
 }, 3000);
 
-// FALLBACK ADICIONAL - cada 2 segundos durante 10 segundos
 let fallbackCount = 0;
 const fallbackInterval = setInterval(() => {
     const loader = document.getElementById('loading-screen');
     if (loader && loader.style.display !== 'none') {
-        console.log(`🚨 FALLBACK ${fallbackCount + 1} - Forzando ocultación`);
         loader.style.display = 'none';
         loader.style.opacity = '0';
         loader.style.visibility = 'hidden';
@@ -562,5 +471,3 @@ const fallbackInterval = setInterval(() => {
         clearInterval(fallbackInterval);
     }
 }, 2000);
-
-console.log('✅ Script principal cargado correctamente');

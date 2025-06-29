@@ -1,628 +1,938 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Felipe Costa | Microtransplante Capilar</title>
-    <link rel="stylesheet" href="./assets/css/styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
-</head>
-<body class="bg-light">
-    
-    <!-- Loading Screen -->
-    <div id="loading-screen" class="loading-screen">
-        <div class="loading-content">
-            <div class="loading-logo">
-                <img src="./assets/images/logo.svg" alt="Dr. Felipe Costa" class="logo-pulse">
-            </div>
-            <div class="loading-text">
-                <p>Microtransplante Capilar</p>
-                <p class="text-sm mt-4 opacity-75">Cragando...</p>
-            </div>
-            <div class="loading-spinner">
-                <div class="spinner"></div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Top Contact Bar -->
-    <div class="top-contact-bar bg-primary text-pure py-2 relative z-50">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col sm:flex-row justify-between items-center text-sm">
-                <div class="flex items-center space-x-6 mb-2 sm:mb-0">
-                    <div class="flex items-center space-x-2">
-                        <i class="fas fa-map-marker-alt text-secondary"></i>
-                        <span>Av. Dirección 1234, Comuna, Santiago Chile</span>
-                    </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dr. Felipe Costa | Microtransplante Capilar</title>
+        <link rel="stylesheet" href="./assets/css/styles.css" />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400;500;700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body class="bg-light">
+        <!-- Loading Screen -->
+        <div id="loading-screen" class="loading-screen">
+            <div class="loading-content">
+                <div class="loading-logo">
+                    <img
+                        src="./assets/images/logo.svg"
+                        alt="Dr. Felipe Costa"
+                        class="logo-pulse w-28"
+                    />
                 </div>
-                <div class="flex items-center space-x-6">
-                    <div class="flex items-center space-x-2">
-                        <i class="fas fa-phone text-secondary"></i>
-                        <a href="tel:+5691155667788" class="hover:text-secondary transition-colors">+56 9 5566-7788</a>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <i class="fas fa-envelope text-secondary"></i>
-                        <a href="mailto:info@drfelipecosta.com" class="hover:text-secondary transition-colors">info@drfelipecosta.com</a>
-                    </div>
+                <div class="loading-text">
+                    <p>Microtransplante Capilar</p>
+                    <p class="text-sm mt-4 opacity-75">Cragando...</p>
+                </div>
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Header -->
-    <header class="header-nav sticky top-0">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center text-2xl font-bold text-primary">
-                    <img src="./assets/images/logo.svg" alt="Dr. Felipe Costa" class="h-25 w-auto">
+        <!-- Top Contact Bar -->
+        <div class="top-contact-bar bg-primary text-pure py-2 relative z-50">
+            <div class="container mx-auto px-4">
+                <div
+                    class="flex flex-col sm:flex-row justify-between items-center text-sm"
+                >
+                    <div class="flex items-center space-x-6 mb-2 sm:mb-0">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-map-marker-alt text-secondary"></i>
+                            <span
+                                >Av. Dirección 1234, Comuna, Santiago
+                                Chile</span
+                            >
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-6">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-phone text-secondary"></i>
+                            <a
+                                href="tel:+5691155667788"
+                                class="hover:text-secondary transition-colors"
+                                >+56 9 5566-7788</a
+                            >
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-envelope text-secondary"></i>
+                            <a
+                                href="mailto:info@drfelipecosta.com"
+                                class="hover:text-secondary transition-colors"
+                                >info@drfelipecosta.com</a
+                            >
+                        </div>
+                    </div>
                 </div>
-                
-                <nav class="hidden lg:flex space-x-8">
-                    <a href="#inicio" class="nav-link">Inicio</a>
-                    <a href="#servicios" class="nav-link">Servicios</a>
-                    <a href="#proceso" class="nav-link">Proceso</a>
-                    <a href="#resultados" class="nav-link">Resultados</a>
-                    <a href="#testimonios" class="nav-link">Testimonios</a>
-                    <a href="#contacto" class="nav-link">Contacto</a>
-                </nav>
-                
-                <div class="hidden lg:block">
-                    <a href="#contacto" class="cta-button">
-                        <i class="fas fa-calendar-alt mr-2"></i>
-                        Contáctanos
-                    </a>
-                </div>
-                
-                <!-- Mobile/Tablet Menu Button -->
-                <button id="mobile-menu-btn" class="lg:hidden text-primary">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
             </div>
         </div>
-    </header>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="mobile-menu closed">
-        <div class="flex flex-col items-center justify-center h-full space-y-8">
-            <a href="#inicio" class="text-2xl text-primary font-medium mobile-menu-link">Inicio</a>
-            <a href="#servicios" class="text-2xl text-primary font-medium mobile-menu-link">Servicios</a>
-            <a href="#proceso" class="text-2xl text-primary font-medium mobile-menu-link">Proceso</a>
-            <a href="#resultados" class="text-2xl text-primary font-medium mobile-menu-link">Resultados</a>
-            <a href="#testimonios" class="text-2xl text-primary font-medium mobile-menu-link">Testimonios</a>
-            <a href="#contacto" class="text-2xl text-primary font-medium mobile-menu-link">Contacto</a>
-            <a href="#contacto" class="cta-button mt-8">Contáctanos</a>
-        </div>
-    </div>
+        <!-- Header -->
+        <header class="header-nav sticky top-0">
+            <div class="container mx-auto px-4 py-4">
+                <div class="flex items-center justify-between">
+                    <div
+                        class="flex items-center text-2xl font-bold text-primary"
+                    >
+                        <img
+                            src="./assets/images/logo.svg"
+                            alt="Dr. Felipe Costa"
+                            class="h-[4.5rem] w-auto"
+                        />
+                    </div>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="hero-section">
-        <div class="hero-decoration top-20 right-20 animate-pulse-soft"></div>
-        <div class="hero-decoration bottom-20 left-20 animate-pulse-soft"></div>
-        
-        <div class="container mx-auto px-4 text-center relative z-10">
-            <div class="animate-fade-in">
-                <h1 class="hero-title">
-                    Recupera tu <span class="hero-gradient-text">Confianza</span>
-                </h1>
-                <p class="hero-subtitle animate-slide-up">
-                    Microtransplante capilar con la tecnología más avanzada
-                </p>
-                
-                <div class="mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
-                    <a href="#contacto" class="cta-button text-lg px-8 py-4">
-                        <i class="fas fa-calendar-alt mr-2"></i>
-                        Contáctanos
-                    </a>
-                    <a href="#proceso" class="text-primary hover:text-secondary transition-colors duration-300 text-lg font-medium">
-                        <i class="fas fa-play-circle mr-2"></i>
-                        Conoce el Proceso
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Stats -->
-            <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 animate-slide-up">
-                <div class="stat-card">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Años de Experiencia</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">2000+</div>
-                    <div class="stat-label">Pacientes Satisfechos</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">98%</div>
-                    <div class="stat-label">Tasa de Éxito</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Natural</div>
-                </div>
-            </div>
-            
-            <!-- Trust Badges -->
-            <div class="mt-12 flex flex-wrap justify-center gap-4 animate-slide-up">
-                <div class="trust-badge">
-                    <i class="fas fa-shield-alt trust-icon animate-bounce-gentle"></i>
-                    <span>Certificado Internacional</span>
-                </div>
-                <div class="trust-badge">
-                    <i class="fas fa-award trust-icon animate-bounce-gentle"></i>
-                    <span>Especialista Reconocido</span>
-                </div>
-                <div class="trust-badge">
-                    <i class="fas fa-microscope trust-icon animate-bounce-gentle"></i>
-                    <span>Tecnología Avanzada</span>
-                </div>
-                <div class="trust-badge">
-                    <i class="fas fa-user-check trust-icon animate-bounce-gentle"></i>
-                    <span>Resultados Garantizados</span>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-gentle">
-            <i class="fas fa-chevron-down text-primary text-2xl"></i>
-        </div>
-    </section>
+                    <nav class="hidden xl:flex space-x-8">
+                        <a href="#inicio" class="nav-link">Inicio</a>
+                        <a href="#servicios" class="nav-link">Servicios</a>
+                        <a href="#proceso" class="nav-link">Proceso</a>
+                        <a href="#resultados" class="nav-link">Resultados</a>
+                        <a href="#testimonios" class="nav-link">Testimonios</a>
+                        <a href="#contacto" class="nav-link">Contacto</a>
+                    </nav>
 
-    <!-- Services Section -->
-    <section id="servicios" class="py-20 section-light">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="section-title">Nuestros Servicios</h2>
-                <div class="gradient-line"></div>
-                <p class="section-subtitle">
-                    Ofrecemos soluciones completas para la restauración capilar
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="service-card animate-slide-up group">
-                    <div class="service-icon group-hover:scale-110">
-                        <i class="fas fa-microscope"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-primary mt-6 mb-4">Microtransplante FUE</h3>
-                    <p class="text-accent">
-                        Técnica de extracción de unidades foliculares una por una, sin cicatrices visibles y recuperación rápida.
-                    </p>
-                </div>
-                
-                <div class="service-card animate-slide-up group">
-                    <div class="service-icon group-hover:scale-110">
-                        <i class="fas fa-seedling"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-primary mt-6 mb-4">Trasplante DHI</h3>
-                    <p class="text-accent">
-                        Implantación directa de cabello sin hacer incisiones previas, mayor densidad y naturalidad.
-                    </p>
-                </div>
-                
-                <div class="service-card animate-slide-up group">
-                    <div class="service-icon group-hover:scale-110">
-                        <i class="fas fa-syringe"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-primary mt-6 mb-4">Plasma Rico en Plaquetas</h3>
-                    <p class="text-accent">
-                        Tratamiento regenerativo que estimula el crecimiento capilar y fortalece el cabello existente.
-                    </p>
-                </div>
-                
-                <div class="service-card animate-slide-up group">
-                    <div class="service-icon group-hover:scale-110">
-                        <i class="fas fa-user-md"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-primary mt-6 mb-4">Consulta Especializada</h3>
-                    <p class="text-accent">
-                        Evaluación completa del estado capilar y diseño personalizado del tratamiento.
-                    </p>
-                </div>
-                
-                <div class="service-card animate-slide-up group">
-                    <div class="service-icon group-hover:scale-110">
-                        <i class="fas fa-heartbeat"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-primary mt-6 mb-4">Seguimiento Post-Operatorio</h3>
-                    <p class="text-accent">
-                        Acompañamiento completo durante el proceso de recuperación y crecimiento.
-                    </p>
-                </div>
-                
-                <div class="service-card animate-slide-up group">
-                    <div class="service-icon group-hover:scale-110">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-primary mt-6 mb-4">Garantía de Resultados</h3>
-                    <p class="text-accent">
-                        Respaldamos nuestro trabajo con garantía de resultados satisfactorios.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Section -->
-    <section id="proceso" class="py-20 section-gradient">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="section-title">Nuestro Proceso</h2>
-                <div class="gradient-line"></div>
-                <p class="section-subtitle">
-                    Un proceso paso a paso diseñado para garantizar los mejores resultados
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="process-step animate-slide-in-left">
-                    <div class="step-number mb-4">1</div>
-                    <h3 class="text-lg font-semibold text-primary mb-3">Consulta Inicial</h3>
-                    <p class="text-accent text-sm">
-                        Evaluación completa del estado capilar y análisis de las expectativas del paciente.
-                    </p>
-                </div>
-                
-                <div class="process-step animate-slide-in-left">
-                    <div class="step-number mb-4">2</div>
-                    <h3 class="text-lg font-semibold text-primary mb-3">Diseño Personalizado</h3>
-                    <p class="text-accent text-sm">
-                        Creación de un plan de tratamiento específico adaptado a cada caso.
-                    </p>
-                </div>
-                
-                <div class="process-step animate-slide-in-right">
-                    <div class="step-number mb-4">3</div>
-                    <h3 class="text-lg font-semibold text-primary mb-3">Procedimiento</h3>
-                    <p class="text-accent text-sm">
-                        Realización del microtransplante con técnicas avanzadas y anestesia local.
-                    </p>
-                </div>
-                
-                <div class="process-step animate-slide-in-right">
-                    <div class="step-number mb-4">4</div>
-                    <h3 class="text-lg font-semibold text-primary mb-3">Seguimiento</h3>
-                    <p class="text-accent text-sm">
-                        Control post-operatorio y acompañamiento durante el proceso de crecimiento.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Results Section -->
-    <section id="resultados" class="py-20 section-light">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="section-title">Resultados Reales</h2>
-                <div class="gradient-line"></div>
-                <p class="section-subtitle">
-                    Mira las transformaciones de nuestros pacientes
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Gallery Item 1 -->
-                <div class="gallery-item animate-slide-up group relative">
-                    <img src="./assets/images/result1.jpg" alt="Antes / Después - 12 meses post-operatorio" class="w-full h-64 object-cover">
-                    <div class="gallery-overlay group-hover:opacity-100">
-                        <p class="text-center text-pure px-4"></p>
-                    </div>
-                </div>
-                <!-- Gallery Item 2 -->
-                <div class="gallery-item animate-slide-up group relative">
-                    <img src="./assets/images/result2.jpg" alt="Antes / Después - 8 meses post-operatorio" class="w-full h-64 object-cover">
-                    <div class="gallery-overlay group-hover:opacity-100">
-                        <p class="text-center text-pure px-4"></p>
-                    </div>
-                </div>
-                <!-- Gallery Item 3 -->
-                <div class="gallery-item animate-slide-up group relative">
-                    <img src="./assets/images/result3.jpg" alt="Antes / Después - 10 meses post-operatorio" class="w-full h-64 object-cover">
-                    <div class="gallery-overlay group-hover:opacity-100">
-                        <p class="text-center text-pure px-4"></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonios" class="py-20 section-gradient">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="section-title">Lo que Dicen Nuestros Pacientes</h2>
-                <div class="gradient-line"></div>
-                <p class="section-subtitle">
-                    Testimonios reales de personas que han confiado en nosotros
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="testimonial-card animate-slide-up">
-                    <div class="testimonial-rating mb-4">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-accent mb-4">
-                        "El Dr. Felipe Costa cambió mi vida. El resultado fue natural y superó mis expectativas. Totalmente recomendado."
-                    </p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-pure font-bold">
-                            M
-                        </div>
-                        <div class="ml-3">
-                            <h4 class="font-semibold text-primary">Miguel R.</h4>
-                            <p class="text-sm text-accent">Paciente</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card animate-slide-up">
-                    <div class="testimonial-rating mb-4">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-accent mb-4">
-                        "Profesionalismo y excelencia en cada detalle. El seguimiento post-operatorio fue excepcional."
-                    </p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-pure font-bold">
-                            C
-                        </div>
-                        <div class="ml-3">
-                            <h4 class="font-semibold text-primary">Carlos S.</h4>
-                            <p class="text-sm text-accent">Paciente</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card animate-slide-up">
-                    <div class="testimonial-rating mb-4">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-accent mb-4">
-                        "Recuperé mi confianza gracias al equipo del Dr. Costa. La atención fue personalizada y los resultados increíbles."
-                    </p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-pure font-bold">
-                            A
-                        </div>
-                        <div class="ml-3">
-                            <h4 class="font-semibold text-primary">Andrés M.</h4>
-                            <p class="text-sm text-accent">Paciente</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="py-20 bg-pure">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="section-title">Preguntas Frecuentes</h2>
-                <div class="gradient-line"></div>
-            </div>
-            
-            <div class="max-w-4xl mx-auto">
-                <div class="space-y-4">
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span>¿Qué es el microtransplante capilar?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>El microtransplante capilar es un procedimiento quirúrgico mínimamente invasivo que consiste en extraer folículos pilosos de la zona donante (generalmente la nuca) e implantarlos en las áreas con alopecia. Utilizamos técnicas FUE y DHI para obtener resultados completamente naturales.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span>¿Cuánto tiempo dura el procedimiento?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>La duración del procedimiento varía según el número de folículos a trasplantar, pero generalmente oscila entre 4 y 8 horas. Se realiza con anestesia local y el paciente puede estar cómodo durante todo el proceso.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span>¿Es doloroso el procedimiento?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>No, el procedimiento se realiza con anestesia local, por lo que no hay dolor durante la cirugía. Después del procedimiento, es normal sentir una ligera molestia que se controla fácilmente con medicación prescrita.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span>¿Cuándo se ven los resultados?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Los primeros resultados visibles aparecen entre los 3 y 4 meses. El resultado definitivo se puede apreciar entre los 8 y 12 meses posteriores al procedimiento, cuando el cabello ha crecido completamente.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span>¿Los resultados son permanentes?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Sí, los folículos trasplantados conservan las características genéticas de la zona donante, por lo que son resistentes a la alopecia androgenética. Los resultados son permanentes y naturales.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span>¿Cuáles son los cuidados post-operatorios?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Los cuidados incluyen evitar la exposición solar directa, no tocar la zona trasplantada, seguir las instrucciones de lavado especial y tomar la medicación prescrita. Te proporcionaremos un protocolo detallado de cuidados.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contacto" class="py-20 section-light">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="section-title">Agenda tu Consulta</h2>
-                <div class="gradient-line"></div>
-                <p class="section-subtitle">
-                    Contáctanos para una evaluación personalizada
-                </p>
-            </div>
-            
-            <div class="grid lg:grid-cols-2 gap-12">
-                <!-- Contact Form -->
-                <div class="animate-slide-in-left">
-                    <form id="contact-form" class="contact-form">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <input type="text" name="name" placeholder="Nombre" class="form-input" required>
-                            <input type="email" name="email" placeholder="Email" class="form-input" required>
-                        </div>
-                        <input type="tel" name="phone" placeholder="Teléfono" class="form-input" required>
-                        <textarea name="message" rows="5" placeholder="Mensaje" class="form-textarea" required></textarea>
-                        <button type="submit" class="submit-button">
-                            <i class="fas fa-paper-plane mr-2"></i>
-                            Enviar Mensaje
-                        </button>
-                    </form>
-                </div>
-                
-                <!-- Contact Info -->
-                <div class="animate-slide-in-right">
-                    <div class="space-y-6">
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <h4 class="font-semibold text-primary text-lg">Nuestra Clínica</h4>
-                            <p class="text-accent">Av. Dirección 1234, Comuna</p>
-                            <p class="text-accent">Santiago - Chile</p>
-                        </div>
-                        
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <h4 class="font-semibold text-primary text-lg">Teléfono</h4>
-                            <p class="text-accent">+56 9 5566-7788</p>
-                            <p class="text-sm text-accent">Lun a Vie: 9:00 - 18:00</p>
-                        </div>
-                        
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i class="fab fa-whatsapp"></i>
-                            </div>
-                            <h4 class="font-semibold text-primary text-lg">WhatsApp</h4>
-                            <p class="text-accent">+56 9 5566-7788</p>
-                            <p class="text-sm text-accent">Disponible 24/7</p>
-                        </div>
-                        
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <h4 class="font-semibold text-primary text-lg">Email</h4>
-                            <p class="text-accent">info@drfelipecosta.com</p>
-                            <p class="text-accent">consultas@drfelipecosta.com</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-primary text-pure py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <div class="flex items-center text-2xl font-bold mb-4">
-                        <img src="./assets/images/logo.svg" alt="Dr. Felipe Costa" class="h-12 w-auto mr-3">
-                    </div>
-                    <p class="text-secondary">
-                        Especialista en microtransplante capilar con más de 15 años de experiencia.
-                    </p>
-                </div>
-                
-                <div>
-                    <h4 class="font-semibold mb-4">Servicios</h4>
-                    <ul class="space-y-2 text-secondary">
-                        <li>Microtransplante FUE</li>
-                        <li>Trasplante DHI</li>
-                        <li>Plasma Rico en Plaquetas</li>
-                        <li>Consulta Especializada</li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-semibold mb-4">Enlaces</h4>
-                    <ul class="space-y-2 text-secondary">
-                        <li><a href="#inicio" class="hover:text-pure transition-colors">Inicio</a></li>
-                        <li><a href="#servicios" class="hover:text-pure transition-colors">Servicios</a></li>
-                        <li><a href="#proceso" class="hover:text-pure transition-colors">Proceso</a></li>
-                        <li><a href="#contacto" class="hover:text-pure transition-colors">Contacto</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-semibold mb-4">Síguenos</h4>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-secondary text-primary rounded-full flex items-center justify-center hover:bg-pure transition-colors">
-                            <i class="fab fa-facebook-f"></i>
+                    <div class="hidden xl:block">
+                        <a href="#contacto" class="cta-button">
+                            <i class="fas fa-calendar-alt mr-2"></i>
+                            Contáctanos
                         </a>
-                        <a href="#" class="w-10 h-10 bg-secondary text-primary rounded-full flex items-center justify-center hover:bg-pure transition-colors">
-                            <i class="fab fa-instagram"></i>
+                    </div>
+
+                    <!-- Mobile/Tablet Menu Button -->
+                    <button id="mobile-menu-btn" class="xl:hidden text-primary">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu closed">
+            <div
+                class="flex flex-col items-center justify-center h-full space-y-8"
+            >
+                <a
+                    href="#inicio"
+                    class="text-2xl text-primary font-medium mobile-menu-link"
+                    >Inicio</a
+                >
+                <a
+                    href="#servicios"
+                    class="text-2xl text-primary font-medium mobile-menu-link"
+                    >Servicios</a
+                >
+                <a
+                    href="#proceso"
+                    class="text-2xl text-primary font-medium mobile-menu-link"
+                    >Proceso</a
+                >
+                <a
+                    href="#resultados"
+                    class="text-2xl text-primary font-medium mobile-menu-link"
+                    >Resultados</a
+                >
+                <a
+                    href="#testimonios"
+                    class="text-2xl text-primary font-medium mobile-menu-link"
+                    >Testimonios</a
+                >
+                <a
+                    href="#contacto"
+                    class="text-2xl text-primary font-medium mobile-menu-link"
+                    >Contacto</a
+                >
+                <a href="#contacto" class="cta-button mt-8">Contáctanos</a>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <section id="inicio" class="hero-section">
+            <div
+                class="hero-decoration top-20 right-20 animate-pulse-soft"
+            ></div>
+            <div
+                class="hero-decoration bottom-20 left-20 animate-pulse-soft"
+            ></div>
+
+            <div class="container mx-auto px-4 text-center relative z-10">
+                <div class="animate-fade-in">
+                    <h1 class="hero-title">
+                        Recupera tu
+                        <span class="hero-gradient-text">Confianza</span>
+                    </h1>
+                    <p class="hero-subtitle animate-slide-up">
+                        Microtransplante capilar con la tecnología más avanzada
+                    </p>
+
+                    <div
+                        class="mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up"
+                    >
+                        <a
+                            href="#contacto"
+                            class="cta-button text-lg px-8 py-4"
+                        >
+                            <i class="fas fa-calendar-alt mr-2"></i>
+                            Contáctanos
                         </a>
-                        <a href="#" class="w-10 h-10 bg-secondary text-primary rounded-full flex items-center justify-center hover:bg-pure transition-colors">
-                            <i class="fab fa-youtube"></i>
+                        <a
+                            href="#proceso"
+                            class="text-primary hover:text-secondary transition-colors duration-300 text-lg font-medium"
+                        >
+                            <i class="fas fa-play-circle mr-2"></i>
+                            Conoce el Proceso
                         </a>
                     </div>
                 </div>
+
+                <!-- Stats -->
+                <div
+                    class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 animate-slide-up"
+                >
+                    <div class="stat-card">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Años de Experiencia</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">2000+</div>
+                        <div class="stat-label">Pacientes Satisfechos</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Tasa de Éxito</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Natural</div>
+                    </div>
+                </div>
+
+                <!-- Trust Badges -->
+                <div
+                    class="mt-12 flex flex-wrap justify-center gap-4 animate-slide-up"
+                >
+                    <div class="trust-badge">
+                        <i
+                            class="fas fa-shield-alt trust-icon animate-bounce-gentle"
+                        ></i>
+                        <span>Certificado Internacional</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i
+                            class="fas fa-award trust-icon animate-bounce-gentle"
+                        ></i>
+                        <span>Especialista Reconocido</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i
+                            class="fas fa-microscope trust-icon animate-bounce-gentle"
+                        ></i>
+                        <span>Tecnología Avanzada</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i
+                            class="fas fa-user-check trust-icon animate-bounce-gentle"
+                        ></i>
+                        <span>Resultados Garantizados</span>
+                    </div>
+                </div>
             </div>
-            
-            <div class="border-t border-secondary/20 mt-8 pt-8 text-center text-secondary">
-                <p>&copy; 2025 Dr. Felipe Costa. Todos los derechos reservados.</p>
+
+            <!-- Scroll Indicator -->
+            <div
+                class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-gentle"
+            >
+                <i class="fas fa-chevron-down text-primary text-2xl"></i>
             </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="servicios" class="py-20 section-light">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="section-title">Nuestros Servicios</h2>
+                    <div class="gradient-line"></div>
+                    <p class="section-subtitle">
+                        Ofrecemos soluciones completas para la restauración
+                        capilar
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="service-card animate-slide-up group">
+                        <div class="service-icon group-hover:scale-110">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h3
+                            class="text-xl font-semibold text-primary mt-6 mb-4"
+                        >
+                            Microtransplante FUE
+                        </h3>
+                        <p class="text-accent">
+                            Técnica de extracción de unidades foliculares una
+                            por una, sin cicatrices visibles y recuperación
+                            rápida.
+                        </p>
+                    </div>
+
+                    <div class="service-card animate-slide-up group">
+                        <div class="service-icon group-hover:scale-110">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3
+                            class="text-xl font-semibold text-primary mt-6 mb-4"
+                        >
+                            Trasplante DHI
+                        </h3>
+                        <p class="text-accent">
+                            Implantación directa de cabello sin hacer incisiones
+                            previas, mayor densidad y naturalidad.
+                        </p>
+                    </div>
+
+                    <div class="service-card animate-slide-up group">
+                        <div class="service-icon group-hover:scale-110">
+                            <i class="fas fa-syringe"></i>
+                        </div>
+                        <h3
+                            class="text-xl font-semibold text-primary mt-6 mb-4"
+                        >
+                            Plasma Rico en Plaquetas
+                        </h3>
+                        <p class="text-accent">
+                            Tratamiento regenerativo que estimula el crecimiento
+                            capilar y fortalece el cabello existente.
+                        </p>
+                    </div>
+
+                    <div class="service-card animate-slide-up group">
+                        <div class="service-icon group-hover:scale-110">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <h3
+                            class="text-xl font-semibold text-primary mt-6 mb-4"
+                        >
+                            Consulta Especializada
+                        </h3>
+                        <p class="text-accent">
+                            Evaluación completa del estado capilar y diseño
+                            personalizado del tratamiento.
+                        </p>
+                    </div>
+
+                    <div class="service-card animate-slide-up group">
+                        <div class="service-icon group-hover:scale-110">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3
+                            class="text-xl font-semibold text-primary mt-6 mb-4"
+                        >
+                            Seguimiento Post-Operatorio
+                        </h3>
+                        <p class="text-accent">
+                            Acompañamiento completo durante el proceso de
+                            recuperación y crecimiento.
+                        </p>
+                    </div>
+
+                    <div class="service-card animate-slide-up group">
+                        <div class="service-icon group-hover:scale-110">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3
+                            class="text-xl font-semibold text-primary mt-6 mb-4"
+                        >
+                            Garantía de Resultados
+                        </h3>
+                        <p class="text-accent">
+                            Respaldamos nuestro trabajo con garantía de
+                            resultados satisfactorios.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="proceso" class="py-20 section-gradient">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="section-title">Nuestro Proceso</h2>
+                    <div class="gradient-line"></div>
+                    <p class="section-subtitle">
+                        Un proceso paso a paso diseñado para garantizar los
+                        mejores resultados
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="process-step animate-slide-in-left">
+                        <div class="step-number mb-4">1</div>
+                        <h3 class="text-lg font-semibold text-primary mb-3">
+                            Consulta Inicial
+                        </h3>
+                        <p class="text-accent text-sm">
+                            Evaluación completa del estado capilar y análisis de
+                            las expectativas del paciente.
+                        </p>
+                    </div>
+
+                    <div class="process-step animate-slide-in-left">
+                        <div class="step-number mb-4">2</div>
+                        <h3 class="text-lg font-semibold text-primary mb-3">
+                            Diseño Personalizado
+                        </h3>
+                        <p class="text-accent text-sm">
+                            Creación de un plan de tratamiento específico
+                            adaptado a cada caso.
+                        </p>
+                    </div>
+
+                    <div class="process-step animate-slide-in-right">
+                        <div class="step-number mb-4">3</div>
+                        <h3 class="text-lg font-semibold text-primary mb-3">
+                            Procedimiento
+                        </h3>
+                        <p class="text-accent text-sm">
+                            Realización del microtransplante con técnicas
+                            avanzadas y anestesia local.
+                        </p>
+                    </div>
+
+                    <div class="process-step animate-slide-in-right">
+                        <div class="step-number mb-4">4</div>
+                        <h3 class="text-lg font-semibold text-primary mb-3">
+                            Seguimiento
+                        </h3>
+                        <p class="text-accent text-sm">
+                            Control post-operatorio y acompañamiento durante el
+                            proceso de crecimiento.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="resultados" class="py-20 section-light">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="section-title">Resultados Reales</h2>
+                    <div class="gradient-line"></div>
+                    <p class="section-subtitle">
+                        Mira las transformaciones de nuestros pacientes
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="gallery-item animate-slide-up group">
+                        <div
+                            class="bg-gradient-to-br from-secondary/20 to-primary/20 h-64 flex items-center justify-center"
+                        >
+                            <i class="fas fa-image text-4xl text-primary"></i>
+                        </div>
+                        <div class="gallery-overlay group-hover:opacity-100">
+                            <div class="text-center text-pure">
+                                <h4 class="text-lg font-semibold">
+                                    Antes / Después
+                                </h4>
+                                <p class="text-sm">12 meses post-operatorio</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item animate-slide-up group">
+                        <div
+                            class="bg-gradient-to-br from-primary/20 to-secondary/20 h-64 flex items-center justify-center"
+                        >
+                            <i class="fas fa-image text-4xl text-primary"></i>
+                        </div>
+                        <div class="gallery-overlay group-hover:opacity-100">
+                            <div class="text-center text-pure">
+                                <h4 class="text-lg font-semibold">
+                                    Antes / Después
+                                </h4>
+                                <p class="text-sm">8 meses post-operatorio</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item animate-slide-up group">
+                        <div
+                            class="bg-gradient-to-br from-secondary/20 to-accent/20 h-64 flex items-center justify-center"
+                        >
+                            <i class="fas fa-image text-4xl text-primary"></i>
+                        </div>
+                        <div class="gallery-overlay group-hover:opacity-100">
+                            <div class="text-center text-pure">
+                                <h4 class="text-lg font-semibold">
+                                    Antes / Después
+                                </h4>
+                                <p class="text-sm">10 meses post-operatorio</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonios" class="py-20 section-gradient">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="section-title">
+                        Lo que Dicen Nuestros Pacientes
+                    </h2>
+                    <div class="gradient-line"></div>
+                    <p class="section-subtitle">
+                        Testimonios reales de personas que han confiado en
+                        nosotros
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="testimonial-card animate-slide-up">
+                        <div class="testimonial-rating mb-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-accent mb-4">
+                            "El Dr. Felipe Costa cambió mi vida. El resultado
+                            fue natural y superó mis expectativas. Totalmente
+                            recomendado."
+                        </p>
+                        <div class="flex items-center">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-pure font-bold"
+                            >
+                                M
+                            </div>
+                            <div class="ml-3">
+                                <h4 class="font-semibold text-primary">
+                                    Miguel R.
+                                </h4>
+                                <p class="text-sm text-accent">Paciente</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card animate-slide-up">
+                        <div class="testimonial-rating mb-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-accent mb-4">
+                            "Profesionalismo y excelencia en cada detalle. El
+                            seguimiento post-operatorio fue excepcional."
+                        </p>
+                        <div class="flex items-center">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-pure font-bold"
+                            >
+                                C
+                            </div>
+                            <div class="ml-3">
+                                <h4 class="font-semibold text-primary">
+                                    Carlos S.
+                                </h4>
+                                <p class="text-sm text-accent">Paciente</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card animate-slide-up">
+                        <div class="testimonial-rating mb-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-accent mb-4">
+                            "Recuperé mi confianza gracias al equipo del Dr.
+                            Costa. La atención fue personalizada y los
+                            resultados increíbles."
+                        </p>
+                        <div class="flex items-center">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-pure font-bold"
+                            >
+                                A
+                            </div>
+                            <div class="ml-3">
+                                <h4 class="font-semibold text-primary">
+                                    Andrés M.
+                                </h4>
+                                <p class="text-sm text-accent">Paciente</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-20 bg-pure">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="section-title">Preguntas Frecuentes</h2>
+                    <div class="gradient-line"></div>
+                </div>
+
+                <div class="max-w-4xl mx-auto">
+                    <div class="space-y-4">
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span
+                                    >¿Qué es el microtransplante capilar?</span
+                                >
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>
+                                    El microtransplante capilar es un
+                                    procedimiento quirúrgico mínimamente
+                                    invasivo que consiste en extraer folículos
+                                    pilosos de la zona donante (generalmente la
+                                    nuca) e implantarlos en las áreas con
+                                    alopecia. Utilizamos técnicas FUE y DHI para
+                                    obtener resultados completamente naturales.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span
+                                    >¿Cuánto tiempo dura el procedimiento?</span
+                                >
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>
+                                    La duración del procedimiento varía según el
+                                    número de folículos a trasplantar, pero
+                                    generalmente oscila entre 4 y 8 horas. Se
+                                    realiza con anestesia local y el paciente
+                                    puede estar cómodo durante todo el proceso.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>¿Es doloroso el procedimiento?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>
+                                    No, el procedimiento se realiza con
+                                    anestesia local, por lo que no hay dolor
+                                    durante la cirugía. Después del
+                                    procedimiento, es normal sentir una ligera
+                                    molestia que se controla fácilmente con
+                                    medicación prescrita.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>¿Cuándo se ven los resultados?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>
+                                    Los primeros resultados visibles aparecen
+                                    entre los 3 y 4 meses. El resultado
+                                    definitivo se puede apreciar entre los 8 y
+                                    12 meses posteriores al procedimiento,
+                                    cuando el cabello ha crecido completamente.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>¿Los resultados son permanentes?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>
+                                    Sí, los folículos trasplantados conservan
+                                    las características genéticas de la zona
+                                    donante, por lo que son resistentes a la
+                                    alopecia androgenética. Los resultados son
+                                    permanentes y naturales.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span
+                                    >¿Cuáles son los cuidados
+                                    post-operatorios?</span
+                                >
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>
+                                    Los cuidados incluyen evitar la exposición
+                                    solar directa, no tocar la zona
+                                    trasplantada, seguir las instrucciones de
+                                    lavado especial y tomar la medicación
+                                    prescrita. Te proporcionaremos un protocolo
+                                    detallado de cuidados.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contacto" class="py-20 section-light">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="section-title">Agenda tu Consulta</h2>
+                    <div class="gradient-line"></div>
+                    <p class="section-subtitle">
+                        Contáctanos para una evaluación personalizada
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div class="animate-slide-in-left">
+                        <form id="contact-form" class="contact-form">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="Nombre"
+                                    class="form-input"
+                                    required
+                                />
+                                <input
+                                    type="email"
+                                    name="email"
+                                    placeholder="Email"
+                                    class="form-input"
+                                    required
+                                />
+                            </div>
+                            <input
+                                type="tel"
+                                name="phone"
+                                placeholder="Teléfono"
+                                class="form-input"
+                                required
+                            />
+                            <textarea
+                                name="message"
+                                rows="5"
+                                placeholder="Mensaje"
+                                class="form-textarea"
+                                required
+                            ></textarea>
+                            <button type="submit" class="submit-button">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Enviar Mensaje
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="animate-slide-in-right">
+                        <div class="space-y-6">
+                            <div class="contact-card">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <h4 class="font-semibold text-primary text-lg">
+                                    Nuestra Clínica
+                                </h4>
+                                <p class="text-accent">
+                                    Av. Dirección 1234, Comuna
+                                </p>
+                                <p class="text-accent">Santiago - Chile</p>
+                            </div>
+
+                            <div class="contact-card">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <h4 class="font-semibold text-primary text-lg">
+                                    Teléfono
+                                </h4>
+                                <p class="text-accent">+56 9 5566-7788</p>
+                                <p class="text-sm text-accent">
+                                    Lun a Vie: 9:00 - 18:00
+                                </p>
+                            </div>
+
+                            <div class="contact-card">
+                                <div class="contact-icon">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <h4 class="font-semibold text-primary text-lg">
+                                    WhatsApp
+                                </h4>
+                                <p class="text-accent">+56 9 5566-7788</p>
+                                <p class="text-sm text-accent">
+                                    Disponible 24/7
+                                </p>
+                            </div>
+
+                            <div class="contact-card">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <h4 class="font-semibold text-primary text-lg">
+                                    Email
+                                </h4>
+                                <p class="text-accent">
+                                    info@drfelipecosta.com
+                                </p>
+                                <p class="text-accent">
+                                    consultas@drfelipecosta.com
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-primary text-pure py-12">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div>
+                        <div class="flex items-center text-2xl font-bold mb-4">
+                            <img
+                                src="./assets/images/logo.svg"
+                                alt="Dr. Felipe Costa"
+                                class="h-12 w-auto mr-3"
+                            />
+                        </div>
+                        <p class="text-secondary">
+                            Especialista en microtransplante capilar con más de
+                            15 años de experiencia.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold mb-4">Servicios</h4>
+                        <ul class="space-y-2 text-secondary">
+                            <li>Microtransplante FUE</li>
+                            <li>Trasplante DHI</li>
+                            <li>Plasma Rico en Plaquetas</li>
+                            <li>Consulta Especializada</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold mb-4">Enlaces</h4>
+                        <ul class="space-y-2 text-secondary">
+                            <li>
+                                <a
+                                    href="#inicio"
+                                    class="hover:text-pure transition-colors"
+                                    >Inicio</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#servicios"
+                                    class="hover:text-pure transition-colors"
+                                    >Servicios</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#proceso"
+                                    class="hover:text-pure transition-colors"
+                                    >Proceso</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#contacto"
+                                    class="hover:text-pure transition-colors"
+                                    >Contacto</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold mb-4">Síguenos</h4>
+                        <div class="flex space-x-4">
+                            <a
+                                href="#"
+                                class="w-10 h-10 bg-secondary text-primary rounded-full flex items-center justify-center hover:bg-pure transition-colors"
+                            >
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="w-10 h-10 bg-secondary text-primary rounded-full flex items-center justify-center hover:bg-pure transition-colors"
+                            >
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="w-10 h-10 bg-secondary text-primary rounded-full flex items-center justify-center hover:bg-pure transition-colors"
+                            >
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="border-t border-secondary/20 mt-8 pt-8 text-center text-secondary"
+                >
+                    <p>
+                        &copy; 2025 Dr. Felipe Costa. Todos los derechos
+                        reservados.
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Scroll Progress Indicator -->
+        <div id="scroll-indicator" class="scroll-indicator"></div>
+
+        <!-- WhatsApp Button -->
+        <a
+            id="whatsapp-float"
+            href="https://wa.me/+5691155667788"
+            class="whatsapp-float"
+            title="WhatsApp"
+        >
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+        <!-- Back to Top -->
+        <div id="div-back-to-top">
+            <button id="back-to-top" class="back-to-top" title="Volver arriba">
+                <i class="fas fa-chevron-up"></i>
+            </button>
         </div>
-    </footer>
 
-    <!-- Scroll Progress Indicator -->
-    <div id="scroll-indicator" class="scroll-indicator"></div>
-
-    <!-- WhatsApp Button -->
-    <a id="whatsapp-float" href="https://wa.me/+5691155667788" class="whatsapp-float" title="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- Back to Top -->
-    <button id="back-to-top" class="back-to-top" title="Volver arriba">
-        <i class="fas fa-chevron-up"></i>
-    </button>
-
-    <script src="./assets/js/main-loader.js"></script>
-
-</body>
+        <script src="./assets/js/main.js"></script>
+    </body>
 </html>
