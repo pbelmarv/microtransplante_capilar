@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Felipe Costa | Microtransplante Capilar</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-light">
+    
+    <!-- Top Contact Bar -->
+    <div class="top-contact-bar bg-primary text-pure py-2 relative z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col sm:flex-row justify-between items-center text-sm">
+                <div class="flex items-center space-x-6 mb-2 sm:mb-0">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-map-marker-alt text-secondary"></i>
+                        <span>Av. Dirección 1234, Comuna, Santiago Chile</span>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-phone text-secondary"></i>
+                        <a href="tel:+5691155667788" class="hover:text-secondary transition-colors">+56 9 5566-7788</a>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-envelope text-secondary"></i>
+                        <a href="mailto:info@drfelipecosta.com" class="hover:text-secondary transition-colors">info@drfelipecosta.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header-nav sticky top-0">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center text-2xl font-bold text-primary">
+                    <img src="./assets/images/logo.svg" alt="Dr. Felipe Costa" class="h-12 w-auto">
+                </div>
+                
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="nav-link">Inicio</a>
+                    <a href="#servicios" class="nav-link">Servicios</a>
+                    <a href="#proceso" class="nav-link">Proceso</a>
+                    <a href="#contacto" class="nav-link">Contacto</a>
+                </nav>
+                
+                <div class="hidden md:block">
+                    <a href="#contacto" class="cta-button">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        Contáctanos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-section">
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <div class="animate-fade-in">
+                <h1 class="hero-title">
+                    Recupera tu <span class="hero-gradient-text">Confianza</span>
+                </h1>
+                <p class="hero-subtitle animate-slide-up">
+                    Microtransplante capilar con la tecnología más avanzada
+                </p>
+                
+                <div class="mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
+                    <a href="#contacto" class="cta-button text-lg px-8 py-4">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        Contáctanos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="py-20 section-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="section-title">Nuestros Servicios</h2>
+                <div class="gradient-line"></div>
+                <p class="section-subtitle">
+                    Ofrecemos soluciones completas para la restauración capilar
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary mt-6 mb-4">Microtransplante FUE</h3>
+                    <p class="text-accent">
+                        Técnica de extracción de unidades foliculares una por una, sin cicatrices visibles.
+                    </p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary mt-6 mb-4">Trasplante DHI</h3>
+                    <p class="text-accent">
+                        Implantación directa de cabello sin hacer incisiones previas.
+                    </p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary mt-6 mb-4">Consulta Especializada</h3>
+                    <p class="text-accent">
+                        Evaluación completa del estado capilar y diseño personalizado.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-pure">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="section-title">Preguntas Frecuentes</h2>
+                <div class="gradient-line"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-4">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>¿Qué es el microtransplante capilar?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer" style="display: none;">
+                            <p>El microtransplante capilar es un procedimiento quirúrgico mínimamente invasivo que consiste en extraer folículos pilosos de la zona donante e implantarlos en las áreas con alopecia.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>¿Cuánto tiempo dura el procedimiento?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer" style="display: none;">
+                            <p>La duración varía según el número de folículos, pero generalmente oscila entre 4 y 8 horas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-20 section-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="section-title">Contacto</h2>
+                <div class="gradient-line"></div>
+            </div>
+            
+            <div class="max-w-2xl mx-auto text-center">
+                <div class="space-y-6">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h4 class="font-semibold text-primary text-lg">Teléfono</h4>
+                        <p class="text-accent">+56 9 5566-7788</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h4 class="font-semibold text-primary text-lg">WhatsApp</h4>
+                        <p class="text-accent">+56 9 5566-7788</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Button -->
+    <a id="whatsapp-float" href="https://wa.me/+5691155667788" class="whatsapp-float" title="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" onclick="scrollToTop()" title="Volver arriba">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+    // Simple FAQ toggle
+    function toggleFAQ(button) {
+        const answer = button.nextElementSibling;
+        const icon = button.querySelector('.faq-icon');
+        
+        if (answer.style.display === 'none') {
+            answer.style.display = 'block';
+            icon.style.transform = 'rotate(180deg)';
+        } else {
+            answer.style.display = 'none';
+            icon.style.transform = 'rotate(0deg)';
+        }
+    }
+
+    // Scroll to top
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Show back to top button
+    window.addEventListener('scroll', function() {
+        const btn = document.getElementById('back-to-top');
+        if (window.pageYOffset > 300) {
+            btn.classList.add('visible');
+        } else {
+            btn.classList.remove('visible');
+        }
+    });
+    </script>
+
+</body>
+</html>

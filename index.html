@@ -3,48 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Felipe Costa | Microtransplante Capilar Especializado | Restauración Capilar</title>
-    <meta name="description" content="Dr. Felipe Costa, especialista en microtransplante capilar con más de 15 años de experiencia. Técnica FUE y DHI con resultados naturales garantizados.">
-    <meta name="keywords" content="microtransplante capilar, transplante cabello, FUE, DHI, alopecia, calvicie, Felipe Costa">
+    <title>Dr. Felipe Costa | Microtransplante Capilar</title>
     <link rel="stylesheet" href="./assets/css/styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body class="bg-light">
     
     <!-- Loading Screen -->
-    <div id="loading-screen" class="loading-screen fixed inset-0 bg-light flex items-center justify-center z-50" style="opacity: 1;">
-        <div class="text-center">
-            <div class="animate-pulse-soft mb-8">
-                <img src="./assets/images/logo.svg" alt="Dr. Felipe Costa" class="h-24 w-auto opacity-80">
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <img src="./assets/images/logo.svg" alt="Dr. Felipe Costa" class="logo-pulse">
             </div>
-            <div class="loading-dots">
-                <div class="loading-dot"></div>
-                <div class="loading-dot"></div>
-                <div class="loading-dot"></div>
+            <div class="loading-text">
+                <p>Microtransplante Capilar</p>
+                <p class="text-sm mt-4 opacity-75">Cragando...</p>
             </div>
-            <p class="text-primary mt-4 font-medium">Cargando...</p>
+            <div class="loading-spinner">
+                <div class="spinner"></div>
+            </div>
         </div>
     </div>
-
-    <script>
-    // Immediate loading screen handler
-    window.addEventListener('load', function() {
-        const loading = document.getElementById('loading-screen');
-        if (loading) {
-            setTimeout(function() {
-                loading.style.transition = 'opacity 0.5s ease';
-                loading.style.opacity = '0';
-                setTimeout(function() {
-                    loading.remove();
-                }, 500);
-            }, 800);
-        }
-    });
-    </script>
-
+    
     <!-- Top Contact Bar -->
     <div class="top-contact-bar bg-primary text-pure py-2 relative z-50">
         <div class="container mx-auto px-4">
@@ -54,15 +35,11 @@
                         <i class="fas fa-map-marker-alt text-secondary"></i>
                         <span>Av. Dirección 1234, Comuna, Santiago Chile</span>
                     </div>
-                    <div class="hidden md:flex items-center space-x-2">
-                        <i class="far fa-clock text-secondary"></i>
-                        <span>Lun-Vie 9:00-18:00, Sáb 9:00-14:00</span>
-                    </div>
                 </div>
                 <div class="flex items-center space-x-6">
                     <div class="flex items-center space-x-2">
                         <i class="fas fa-phone text-secondary"></i>
-                        <a href="tel:+5491155667788" class="hover:text-secondary transition-colors">+56 9 5566-7788</a>
+                        <a href="tel:+5691155667788" class="hover:text-secondary transition-colors">+56 9 5566-7788</a>
                     </div>
                     <div class="flex items-center space-x-2">
                         <i class="fas fa-envelope text-secondary"></i>
@@ -78,11 +55,10 @@
         <div class="container mx-auto px-4 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center text-2xl font-bold text-primary">
-                    <img src="./assets/images/logo.svg" alt="Dr. Felipe Costa - Microtransplante Capilar" class="h-12 w-auto">
+                    <img src="./assets/images/logo.svg" alt="Dr. Felipe Costa" class="h-25 w-auto">
                 </div>
                 
-                <!-- Desktop Navigation -->
-                <nav class="hidden md:flex space-x-8">
+                <nav class="hidden lg:flex space-x-8">
                     <a href="#inicio" class="nav-link">Inicio</a>
                     <a href="#servicios" class="nav-link">Servicios</a>
                     <a href="#proceso" class="nav-link">Proceso</a>
@@ -91,16 +67,15 @@
                     <a href="#contacto" class="nav-link">Contacto</a>
                 </nav>
                 
-                <!-- CTA Button -->
-                <div class="hidden md:block">
+                <div class="hidden lg:block">
                     <a href="#contacto" class="cta-button">
                         <i class="fas fa-calendar-alt mr-2"></i>
                         Contáctanos
                     </a>
                 </div>
                 
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden text-primary">
+                <!-- Mobile/Tablet Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-primary">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
@@ -200,7 +175,7 @@
                 <h2 class="section-title">Nuestros Servicios</h2>
                 <div class="gradient-line"></div>
                 <p class="section-subtitle">
-                    Ofrecemos soluciones completas para la restauración capilar con tecnología de vanguardia
+                    Ofrecemos soluciones completas para la restauración capilar
                 </p>
             </div>
             
@@ -327,39 +302,25 @@
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="gallery-item animate-slide-up group">
-                    <div class="bg-gradient-to-br from-secondary/20 to-primary/20 h-64 flex items-center justify-center">
-                        <i class="fas fa-image text-4xl text-primary"></i>
-                    </div>
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item animate-slide-up group relative">
+                    <img src="./assets/images/result1.jpg" alt="Antes / Después - 12 meses post-operatorio" class="w-full h-64 object-cover">
                     <div class="gallery-overlay group-hover:opacity-100">
-                        <div class="text-center text-pure">
-                            <h4 class="text-lg font-semibold">Antes / Después</h4>
-                            <p class="text-sm">12 meses post-operatorio</p>
-                        </div>
+                        <p class="text-center text-pure px-4"></p>
                     </div>
                 </div>
-                
-                <div class="gallery-item animate-slide-up group">
-                    <div class="bg-gradient-to-br from-primary/20 to-secondary/20 h-64 flex items-center justify-center">
-                        <i class="fas fa-image text-4xl text-primary"></i>
-                    </div>
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item animate-slide-up group relative">
+                    <img src="./assets/images/result2.jpg" alt="Antes / Después - 8 meses post-operatorio" class="w-full h-64 object-cover">
                     <div class="gallery-overlay group-hover:opacity-100">
-                        <div class="text-center text-pure">
-                            <h4 class="text-lg font-semibold">Antes / Después</h4>
-                            <p class="text-sm">8 meses post-operatorio</p>
-                        </div>
+                        <p class="text-center text-pure px-4"></p>
                     </div>
                 </div>
-                
-                <div class="gallery-item animate-slide-up group">
-                    <div class="bg-gradient-to-br from-secondary/20 to-accent/20 h-64 flex items-center justify-center">
-                        <i class="fas fa-image text-4xl text-primary"></i>
-                    </div>
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item animate-slide-up group relative">
+                    <img src="./assets/images/result3.jpg" alt="Antes / Después - 10 meses post-operatorio" class="w-full h-64 object-cover">
                     <div class="gallery-overlay group-hover:opacity-100">
-                        <div class="text-center text-pure">
-                            <h4 class="text-lg font-semibold">Antes / Después</h4>
-                            <p class="text-sm">10 meses post-operatorio</p>
-                        </div>
+                        <p class="text-center text-pure px-4"></p>
                     </div>
                 </div>
             </div>
@@ -453,9 +414,6 @@
             <div class="text-center mb-16">
                 <h2 class="section-title">Preguntas Frecuentes</h2>
                 <div class="gradient-line"></div>
-                <p class="section-subtitle">
-                    Resolvemos tus dudas sobre el microtransplante capilar
-                </p>
             </div>
             
             <div class="max-w-4xl mx-auto">
@@ -465,7 +423,7 @@
                             <span>¿Qué es el microtransplante capilar?</span>
                             <i class="fas fa-chevron-down faq-icon"></i>
                         </button>
-                        <div class="faq-answer" style="display: none;">
+                        <div class="faq-answer">
                             <p>El microtransplante capilar es un procedimiento quirúrgico mínimamente invasivo que consiste en extraer folículos pilosos de la zona donante (generalmente la nuca) e implantarlos en las áreas con alopecia. Utilizamos técnicas FUE y DHI para obtener resultados completamente naturales.</p>
                         </div>
                     </div>
@@ -475,7 +433,7 @@
                             <span>¿Cuánto tiempo dura el procedimiento?</span>
                             <i class="fas fa-chevron-down faq-icon"></i>
                         </button>
-                        <div class="faq-answer" style="display: none;">
+                        <div class="faq-answer">
                             <p>La duración del procedimiento varía según el número de folículos a trasplantar, pero generalmente oscila entre 4 y 8 horas. Se realiza con anestesia local y el paciente puede estar cómodo durante todo el proceso.</p>
                         </div>
                     </div>
@@ -485,7 +443,7 @@
                             <span>¿Es doloroso el procedimiento?</span>
                             <i class="fas fa-chevron-down faq-icon"></i>
                         </button>
-                        <div class="faq-answer" style="display: none;">
+                        <div class="faq-answer">
                             <p>No, el procedimiento se realiza con anestesia local, por lo que no hay dolor durante la cirugía. Después del procedimiento, es normal sentir una ligera molestia que se controla fácilmente con medicación prescrita.</p>
                         </div>
                     </div>
@@ -495,7 +453,7 @@
                             <span>¿Cuándo se ven los resultados?</span>
                             <i class="fas fa-chevron-down faq-icon"></i>
                         </button>
-                        <div class="faq-answer" style="display: none;">
+                        <div class="faq-answer">
                             <p>Los primeros resultados visibles aparecen entre los 3 y 4 meses. El resultado definitivo se puede apreciar entre los 8 y 12 meses posteriores al procedimiento, cuando el cabello ha crecido completamente.</p>
                         </div>
                     </div>
@@ -505,7 +463,7 @@
                             <span>¿Los resultados son permanentes?</span>
                             <i class="fas fa-chevron-down faq-icon"></i>
                         </button>
-                        <div class="faq-answer" style="display: none;">
+                        <div class="faq-answer">
                             <p>Sí, los folículos trasplantados conservan las características genéticas de la zona donante, por lo que son resistentes a la alopecia androgenética. Los resultados son permanentes y naturales.</p>
                         </div>
                     </div>
@@ -515,7 +473,7 @@
                             <span>¿Cuáles son los cuidados post-operatorios?</span>
                             <i class="fas fa-chevron-down faq-icon"></i>
                         </button>
-                        <div class="faq-answer" style="display: none;">
+                        <div class="faq-answer">
                             <p>Los cuidados incluyen evitar la exposición solar directa, no tocar la zona trasplantada, seguir las instrucciones de lavado especial y tomar la medicación prescrita. Te proporcionaremos un protocolo detallado de cuidados.</p>
                         </div>
                     </div>
@@ -531,7 +489,7 @@
                 <h2 class="section-title">Agenda tu Consulta</h2>
                 <div class="gradient-line"></div>
                 <p class="section-subtitle">
-                    Contáctanos para una evaluación gratuita y personalizada
+                    Contáctanos para una evaluación personalizada
                 </p>
             </div>
             
@@ -560,8 +518,8 @@
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <h4 class="font-semibold text-primary text-lg">Nuestra Clínica</h4>
-                            <p class="text-accent">Av. Libertador 1234, CABA</p>
-                            <p class="text-accent">Zona Norte - Buenos Aires</p>
+                            <p class="text-accent">Av. Dirección 1234, Comuna</p>
+                            <p class="text-accent">Santiago - Chile</p>
                         </div>
                         
                         <div class="contact-card">
@@ -569,7 +527,7 @@
                                 <i class="fas fa-phone"></i>
                             </div>
                             <h4 class="font-semibold text-primary text-lg">Teléfono</h4>
-                            <p class="text-accent">+54 11 4567-8900</p>
+                            <p class="text-accent">+56 9 5566-7788</p>
                             <p class="text-sm text-accent">Lun a Vie: 9:00 - 18:00</p>
                         </div>
                         
@@ -578,7 +536,7 @@
                                 <i class="fab fa-whatsapp"></i>
                             </div>
                             <h4 class="font-semibold text-primary text-lg">WhatsApp</h4>
-                            <p class="text-accent">+54 9 11 1234-5678</p>
+                            <p class="text-accent">+56 9 5566-7788</p>
                             <p class="text-sm text-accent">Disponible 24/7</p>
                         </div>
                         
@@ -589,12 +547,6 @@
                             <h4 class="font-semibold text-primary text-lg">Email</h4>
                             <p class="text-accent">info@drfelipecosta.com</p>
                             <p class="text-accent">consultas@drfelipecosta.com</p>
-                        </div>
-                        
-                        <div class="bg-gradient-to-r from-primary to-secondary p-6 rounded-xl text-pure text-center">
-                            <i class="fas fa-gift text-3xl mb-3"></i>
-                            <h4 class="font-bold text-lg mb-2">¡Consulta Gratuita!</h4>
-                            <p class="text-sm opacity-90">Agenda tu evaluación sin costo y recibe un plan personalizado</p>
                         </div>
                     </div>
                 </div>
@@ -609,10 +561,6 @@
                 <div>
                     <div class="flex items-center text-2xl font-bold mb-4">
                         <img src="./assets/images/logo.svg" alt="Dr. Felipe Costa" class="h-12 w-auto mr-3">
-                        <div class="flex flex-col">
-                            <span class="text-lg leading-none">Dr. Felipe Costa</span>
-                            <span class="text-xs text-secondary font-normal">Microtransplante Capilar</span>
-                        </div>
                     </div>
                     <p class="text-secondary">
                         Especialista en microtransplante capilar con más de 15 años de experiencia.
@@ -656,123 +604,25 @@
             </div>
             
             <div class="border-t border-secondary/20 mt-8 pt-8 text-center text-secondary">
-                <p>&copy; 2025 Pbelmarv. Todos los derechos reservados.</p>
+                <p>&copy; 2025 Dr. Felipe Costa. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scroll to Top Button -->
-    <button id="scroll-top" class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-pure rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 opacity-0 pointer-events-none">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <!-- Scroll Progress Indicator -->
-    <div id="scroll-progress" class="scroll-indicator" style="width: 0%"></div>
-
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('closed');
-            mobileMenu.classList.toggle('open');
-        });
-
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('closed');
-                mobileMenu.classList.remove('open');
-            });
-        });
-
-        // Smooth Scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Scroll Progress
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.pageYOffset;
-            const docHeight = document.body.offsetHeight - window.innerHeight;
-            const scrollPercent = (scrollTop / docHeight) * 100;
-            document.getElementById('scroll-progress').style.width = scrollPercent + '%';
-        });
-
-        // Scroll to Top Button
-        const scrollTopBtn = document.getElementById('scroll-top');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollTopBtn.style.opacity = '1';
-                scrollTopBtn.style.pointerEvents = 'auto';
-            } else {
-                scrollTopBtn.style.opacity = '0';
-                scrollTopBtn.style.pointerEvents = 'none';
-            }
-        });
-
-        scrollTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Animation on Scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all animated elements
-        document.querySelectorAll('.animate-slide-up, .animate-slide-in-left, .animate-slide-in-right').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            observer.observe(el);
-        });
-
-        // Form Submission
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Add your form submission logic here
-            alert('¡Gracias por tu mensaje! Te contactaremos pronto.');
-        });
-    </script>
-
     <!-- Scroll Progress Indicator -->
     <div id="scroll-indicator" class="scroll-indicator"></div>
 
-    <!-- WhatsApp Floating Button -->
-    <a id="whatsapp-float" href="#" class="whatsapp-float animate-bounce-slow" title="Consulta por WhatsApp">
+    <!-- WhatsApp Button -->
+    <a id="whatsapp-float" href="https://wa.me/+5691155667788" class="whatsapp-float" title="WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Back to Top Button -->
+    <!-- Back to Top -->
     <button id="back-to-top" class="back-to-top" title="Volver arriba">
         <i class="fas fa-chevron-up"></i>
     </button>
 
-    <!-- JavaScript -->
-    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/main-loader.js"></script>
+
 </body>
 </html>

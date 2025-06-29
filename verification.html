@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificación del Sitio - Dr. Felipe Costa</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        .working { background-color: #d4edda; border-color: #c3e6cb; }
+        .error { background-color: #f8d7da; border-color: #f5c6cb; }
+        .info { background-color: #d1ecf1; border-color: #bee5eb; }
+        h2 { margin-top: 0; }
+        ul { margin: 10px 0; }
+        button { margin: 5px; padding: 10px 15px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>🔍 Verificación del Sitio Web - Dr. Felipe Costa</h1>
+    
+    <div class="section info">
+        <h2>📋 Resumen de Verificación</h2>
+        <p>Esta página verifica que todas las funcionalidades del sitio estén funcionando correctamente.</p>
+        <p><strong>URL del sitio:</strong> <a href="index.html" target="_blank">index.html</a></p>
+    </div>
+
+    <div class="section" id="sections-check">
+        <h2>📄 Secciones del Sitio</h2>
+        <ul id="sections-list">
+            <li>🔄 Verificando...</li>
+        </ul>
+    </div>
+
+    <div class="section" id="css-check">
+        <h2>🎨 Estilos CSS</h2>
+        <p id="css-status">🔄 Verificando...</p>
+    </div>
+
+    <div class="section" id="js-check">
+        <h2>⚡ Funcionalidades JavaScript</h2>
+        <ul id="js-list">
+            <li>🔄 Verificando...</li>
+        </ul>
+    </div>
+
+    <div class="section" id="responsive-check">
+        <h2>📱 Responsividad</h2>
+        <button onclick="testResponsive('mobile')">Probar Móvil</button>
+        <button onclick="testResponsive('tablet')">Probar Tablet</button>
+        <button onclick="testResponsive('desktop')">Probar Desktop</button>
+        <p id="responsive-status">Haz clic en los botones para probar diferentes tamaños</p>
+    </div>
+
+    <div class="section info">
+        <h2>🚀 Acciones Rápidas</h2>
+        <button onclick="window.open('index.html', '_blank')">🌐 Abrir Sitio</button>
+        <button onclick="testAllFunctionalities()">🔧 Probar Todo</button>
+        <button onclick="generateReport()">📊 Generar Reporte</button>
+    </div>
+
+    <div class="section" id="report" style="display: none;">
+        <h2>📊 Reporte de Verificación</h2>
+        <pre id="report-content"></pre>
+    </div>
+
+    <script>
+        // Lista de secciones esperadas
+        const expectedSections = [
+            'inicio', 'servicios', 'proceso', 'resultados', 
+            'testimonios', 'faq', 'contacto'
+        ];
+
+        // Lista de funcionalidades JavaScript esperadas
+        const expectedJS = [
+            'Menú móvil',
+            'FAQ interactivo', 
+            'Formulario de contacto',
+            'Scroll suave',
+            'Botones flotantes',
+            'Animaciones al scroll',
+            'Barra de progreso'
+        ];
+
+        function checkSections() {
+            const iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            iframe.src = 'index.html';
+            
+            iframe.onload = function() {
+                const doc = iframe.contentDocument;
+                const sectionsDiv = document.getElementById('sections-check');
+                const sectionsList = document.getElementById('sections-list');
+                
+                let foundSections = [];
+                let missingSections = [];
+                
+                expectedSections.forEach(sectionId => {
+                    const section = doc.getElementById(sectionId);
+                    if (section) {
+                        foundSections.push(sectionId);
+                    } else {
+                        missingSections.push(sectionId);
+                    }
+                });
+                
+                sectionsList.innerHTML = '';
+                
+                foundSections.forEach(section => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `✅ Sección "${section}" encontrada`;
+                    li.style.color = 'green';
+                    sectionsList.appendChild(li);
+                });
+                
+                if (missingSections.length > 0) {
+                    missingSections.forEach(section => {
+                        const li = document.createElement('li');
+                        li.innerHTML = `❌ Sección "${section}" faltante`;
+                        li.style.color = 'red';
+                        sectionsList.appendChild(li);
+                    });
+                    sectionsDiv.className = 'section error';
+                } else {
+                    sectionsDiv.className = 'section working';
+                }
+                
+                // Check footer
+                const footer = doc.querySelector('footer');
+                const footerLi = document.createElement('li');
+                if (footer) {
+                    footerLi.innerHTML = '✅ Footer encontrado';
+                    footerLi.style.color = 'green';
+                } else {
+                    footerLi.innerHTML = '❌ Footer faltante';
+                    footerLi.style.color = 'red';
+                }
+                sectionsList.appendChild(footerLi);
+                
+                document.body.removeChild(iframe);
+            };
+            
+            document.body.appendChild(iframe);
+        }
+
+        function checkCSS() {
+            const cssDiv = document.getElementById('css-check');
+            const cssStatus = document.getElementById('css-status');
+            
+            fetch('assets/css/styles.css')
+                .then(response => {
+                    if (response.ok) {
+                        cssStatus.innerHTML = '✅ Archivo CSS cargado correctamente';
+                        cssDiv.className = 'section working';
+                        return response.text();
+                    } else {
+                        throw new Error('CSS no encontrado');
+                    }
+                })
+                .then(cssText => {
+                    const criticalClasses = [
+                        'header-nav', 'hero-section', 'service-card', 
+                        'faq-item', 'footer', 'whatsapp-float'
+                    ];
+                    
+                    let foundClasses = 0;
+                    criticalClasses.forEach(className => {
+                        if (cssText.includes(className)) {
+                            foundClasses++;
+                        }
+                    });
+                    
+                    cssStatus.innerHTML += `<br>📊 ${foundClasses}/${criticalClasses.length} clases críticas encontradas`;
+                })
+                .catch(error => {
+                    cssStatus.innerHTML = '❌ Error al cargar CSS: ' + error.message;
+                    cssDiv.className = 'section error';
+                });
+        }
+
+        function checkJS() {
+            const jsDiv = document.getElementById('js-check');
+            const jsList = document.getElementById('js-list');
+            
+            fetch('assets/js/main-clean.js')
+                .then(response => {
+                    if (response.ok) {
+                        jsDiv.className = 'section working';
+                        return response.text();
+                    } else {
+                        throw new Error('JS no encontrado');
+                    }
+                })
+                .then(jsText => {
+                    jsList.innerHTML = '';
+                    
+                    const jsChecks = [
+                        { name: 'Menú móvil', search: 'initializeMobileMenu' },
+                        { name: 'FAQ interactivo', search: 'initializeFAQ' },
+                        { name: 'Formulario contacto', search: 'initializeForm' },
+                        { name: 'Scroll suave', search: 'initializeSmoothScrolling' },
+                        { name: 'Botones flotantes', search: 'initializeWhatsApp' },
+                        { name: 'Animaciones', search: 'initializeAnimations' },
+                        { name: 'Barra progreso', search: 'initializeScrollProgress' }
+                    ];
+                    
+                    jsChecks.forEach(check => {
+                        const li = document.createElement('li');
+                        if (jsText.includes(check.search)) {
+                            li.innerHTML = `✅ ${check.name} implementado`;
+                            li.style.color = 'green';
+                        } else {
+                            li.innerHTML = `❌ ${check.name} faltante`;
+                            li.style.color = 'red';
+                        }
+                        jsList.appendChild(li);
+                    });
+                })
+                .catch(error => {
+                    jsList.innerHTML = `<li style="color: red;">❌ Error al cargar JavaScript: ${error.message}</li>`;
+                    jsDiv.className = 'section error';
+                });
+        }
+
+        function testResponsive(size) {
+            const responsiveStatus = document.getElementById('responsive-status');
+            let width, height;
+            
+            switch(size) {
+                case 'mobile':
+                    width = 375;
+                    height = 667;
+                    break;
+                case 'tablet':
+                    width = 768;
+                    height = 1024;
+                    break;
+                case 'desktop':
+                    width = 1920;
+                    height = 1080;
+                    break;
+            }
+            
+            const popup = window.open('index.html', 'responsive-test', 
+                `width=${width},height=${height},scrollbars=yes,resizable=yes`);
+            
+            responsiveStatus.innerHTML = `📱 Abierto en modo ${size} (${width}x${height})`;
+        }
+
+        function testAllFunctionalities() {
+            checkSections();
+            checkCSS();
+            checkJS();
+            
+            document.getElementById('responsive-check').className = 'section info';
+            document.getElementById('responsive-status').innerHTML = 'Usa los botones para probar diferentes tamaños';
+        }
+
+        function generateReport() {
+            const reportDiv = document.getElementById('report');
+            const reportContent = document.getElementById('report-content');
+            
+            let report = `REPORTE DE VERIFICACIÓN - ${new Date().toLocaleString()}
+================================================
+
+SECCIONES:
+`;
+            
+            const sectionItems = document.querySelectorAll('#sections-list li');
+            sectionItems.forEach(item => {
+                report += `${item.textContent}\n`;
+            });
+            
+            report += `\nCSS:
+${document.getElementById('css-status').textContent}
+
+JAVASCRIPT:
+`;
+            
+            const jsItems = document.querySelectorAll('#js-list li');
+            jsItems.forEach(item => {
+                report += `${item.textContent}\n`;
+            });
+            
+            report += `\n================================================
+RECOMENDACIONES:
+- Verificar funcionamiento en diferentes navegadores
+- Probar en dispositivos móviles reales
+- Validar formularios de contacto
+- Comprobar enlaces de WhatsApp
+- Revisar velocidad de carga
+`;
+            
+            reportContent.textContent = report;
+            reportDiv.style.display = 'block';
+        }
+
+        // Ejecutar verificaciones al cargar
+        window.onload = function() {
+            setTimeout(() => {
+                testAllFunctionalities();
+            }, 1000);
+        };
+    </script>
+</body>
+</html>
