@@ -103,28 +103,18 @@ function initFAQ() {
 
         if (!question || !answer || !icon) return;
 
-        // Estado inicial
-        answer.style.display = "none";
-        icon.style.transform = "rotate(0deg)";
+        // Remover cualquier estado previo
+        answer.classList.remove('show');
+        icon.classList.remove('open');
 
         question.addEventListener("click", function () {
-            const isOpen = answer.style.display === "block";
-
             // Cerrar todas las respuestas
-            faqItems.forEach((otherItem) => {
-                const otherAnswer = otherItem.querySelector(".faq-answer");
-                const otherIcon = otherItem.querySelector(".faq-icon");
-                if (otherAnswer && otherIcon) {
-                    otherAnswer.style.display = "none";
-                    otherIcon.style.transform = "rotate(0deg)";
-                }
-            });
+            document.querySelectorAll('.faq-answer.show').forEach(a => a.classList.remove('show'));
+            document.querySelectorAll('.faq-icon.open').forEach(i => i.classList.remove('open'));
 
-            // Si no estaba abierta, abrirla
-            if (!isOpen) {
-                answer.style.display = "block";
-                icon.style.transform = "rotate(180deg)";
-            }
+            // Abrir la actual
+            answer.classList.add('show');
+            icon.classList.add('open');
         });
     });
 }

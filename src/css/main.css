@@ -98,16 +98,6 @@ footer,
     }
 }
 
-@media (min-width: 1280px) {
-    .mobile-menu {
-        display: none !important;
-    }
-    
-    #mobile-menu-btn {
-        display: none !important;
-    }
-}
-
 /* HEADER ULTRA ROBUST */
 .header-nav {
     position: fixed !important;
@@ -139,7 +129,10 @@ footer,
     transition: all 0.3s ease !important;
 }
 
-/* FAQ ULTRA ROBUST */
+/* =============================================
+   FAQ ULTRA ROBUST (comentado para permitir Tailwind)
+   ============================================= */
+/*
 .faq-answer {
     display: none !important;
     padding: 1rem !important;
@@ -154,6 +147,7 @@ footer,
     font-size: 1.125rem !important;
     transform: rotate(0deg) !important;
 }
+*/
 
 /* Mobile Menu */
 .mobile-menu {
@@ -570,15 +564,14 @@ footer,
     }
 
     .faq-answer {
-        @apply pb-4 text-accent leading-relaxed transition-all duration-300 overflow-hidden;
-        max-height: 0;
-        opacity: 0;
+        @apply overflow-hidden max-h-0 opacity-0 transition-[max-height,opacity] duration-500 ease-in-out;
+        /* eliminar max-height y opacity en línea */
+        /* max-height: 0; opacity: 0; */
     }
 
     .faq-answer.show {
-        max-height: 500px;
-        opacity: 1;
-        padding-bottom: 1rem;
+        @apply max-h-96 opacity-100 pb-4;
+        /* ya no es necesario display:block */
     }
 
     .faq-icon {
@@ -788,17 +781,6 @@ footer,
         }
     }
 
-    @media (min-width: 769px) {
-        #mobile-menu-btn {
-            display: none !important;
-        }
-        
-        .mobile-menu {
-            display: none !important;
-        }
-    }
-
-    /* TABLET FIXES */
     @media (min-width: 769px) and (max-width: 1024px) {
         .container {
             padding-left: 1.5rem !important;
@@ -1021,7 +1003,23 @@ footer,
         z-index: 10 !important;
     }
 
-    /* ...existing code... */
+    /* Loader Logo Size Responsive */
+    .loading-logo {
+        @apply w-40 mx-auto;
+    }
+    @screen md {
+        .loading-logo {
+            @apply w-28;
+        }
+    }
+
+    /* Hero Section Mobile Fix */
+    @media (max-width: 768px) {
+        .hero-section {
+            /* eliminar padding superior para centrar verticalmente */
+            @apply pt-0;
+        }
+    }
 }
 
 /* FAQ SECTION - SIMPLE AND CLEAN */

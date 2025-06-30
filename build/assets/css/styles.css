@@ -1098,22 +1098,21 @@ body {
 }
 
 .faq-answer {
+  max-height: 0px;
   overflow: hidden;
-  padding-bottom: 1rem;
-  line-height: 1.625;
-  --tw-text-opacity: 1;
-  color: rgb(128 138 147 / var(--tw-text-opacity, 1));
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
-  max-height: 0;
   opacity: 0;
+  transition-property: max-height,opacity;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  /* eliminar max-height y opacity en línea */
+  /* max-height: 0; opacity: 0; */
 }
 
 .faq-answer.show {
-  max-height: 500px;
-  opacity: 1;
+  max-height: 24rem;
   padding-bottom: 1rem;
+  opacity: 1;
+  /* ya no es necesario display:block */
 }
 
 .faq-icon {
@@ -1471,6 +1470,10 @@ body {
 
 /* Notification Toast */
 
+.toast.show {
+  transform: translateX(0);
+}
+
 /* Fade In Animation */
 
 .fade-in.visible {
@@ -1546,18 +1549,6 @@ body {
     height: 3.5rem !important;
   }
 }
-
-@media (min-width: 769px) {
-  #mobile-menu-btn {
-    display: none !important;
-  }
-
-  .mobile-menu {
-    display: none !important;
-  }
-}
-
-/* TABLET FIXES */
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .container {
@@ -1788,7 +1779,28 @@ body {
   z-index: 10 !important;
 }
 
-/* ...existing code... */
+/* Loader Logo Size Responsive */
+
+.loading-logo {
+  margin-left: auto;
+  margin-right: auto;
+  width: 10rem;
+}
+
+@media (min-width: 768px) {
+  .loading-logo {
+    width: 7rem;
+  }
+}
+
+/* Hero Section Mobile Fix */
+
+@media (max-width: 768px) {
+  .hero-section {
+    /* eliminar padding superior para centrar verticalmente */
+    padding-top: 0px;
+  }
+}
 
 .visible {
   visibility: visible;
@@ -1943,16 +1955,24 @@ body {
   width: 3rem;
 }
 
-.w-\[4\.5rem\] {
-  width: 4.5rem;
+.w-28 {
+  width: 7rem;
 }
 
 .w-auto {
   width: auto;
 }
 
-.w-28 {
-  width: 7rem;
+.w-60 {
+  width: 15rem;
+}
+
+.w-40 {
+  width: 10rem;
+}
+
+.w-48 {
+  width: 12rem;
 }
 
 .max-w-2xl {
@@ -2422,16 +2442,6 @@ footer,
   }
 }
 
-@media (min-width: 1280px) {
-  .mobile-menu {
-    display: none !important;
-  }
-
-  #mobile-menu-btn {
-    display: none !important;
-  }
-}
-
 /* HEADER ULTRA ROBUST */
 
 .header-nav {
@@ -2464,22 +2474,26 @@ footer,
   transition: all 0.3s ease !important;
 }
 
-/* FAQ ULTRA ROBUST */
+/* =============================================
+   FAQ ULTRA ROBUST (comentado para permitir Tailwind)
+   ============================================= */
 
+/*
 .faq-answer {
-  display: none !important;
-  padding: 1rem !important;
-  background: #f8f9fa !important;
-  border-radius: 0.5rem !important;
-  margin-top: 0.5rem !important;
-  line-height: 1.6 !important;
+    display: none !important;
+    padding: 1rem !important;
+    background: #f8f9fa !important;
+    border-radius: 0.5rem !important;
+    margin-top: 0.5rem !important;
+    line-height: 1.6 !important;
 }
 
 .faq-icon {
-  transition: transform 0.3s ease !important;
-  font-size: 1.125rem !important;
-  transform: rotate(0deg) !important;
+    transition: transform 0.3s ease !important;
+    font-size: 1.125rem !important;
+    transform: rotate(0deg) !important;
 }
+*/
 
 /* Mobile Menu */
 
