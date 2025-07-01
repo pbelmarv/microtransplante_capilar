@@ -1485,6 +1485,10 @@ body {
 
 /* Logo blanco para footer */
 
+.logo-white {
+  filter: brightness(0) invert(1);
+}
+
 /* Reset específico para elementos fixed */
 
 .top-contact-bar,
@@ -1800,6 +1804,19 @@ body {
     /* eliminar padding superior para centrar verticalmente */
     padding-top: 0px;
   }
+}
+
+/* Transparent backgrounds for loader and navbar */
+
+.loading-screen {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(5px) !important;
+  -webkit-backdrop-filter: blur(5px) !important;
+}
+
+.header-nav,
+    .header-nav.scrolled {
+  background: transparent !important;
 }
 
 .visible {
@@ -2216,8 +2233,17 @@ body {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.via-secondary\/20 {
+  --tw-gradient-to: rgb(166 201 220 / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), rgb(166 201 220 / 0.2) var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
 .to-accent\/20 {
   --tw-gradient-to: rgb(128 138 147 / 0.2) var(--tw-gradient-to-position);
+}
+
+.to-light\/50 {
+  --tw-gradient-to: rgb(245 241 236 / 0.5) var(--tw-gradient-to-position);
 }
 
 .to-primary\/20 {
@@ -2325,6 +2351,11 @@ body {
 .text-secondary {
   --tw-text-opacity: 1;
   color: rgb(166 201 220 / var(--tw-text-opacity, 1));
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
 .opacity-75 {
@@ -2670,6 +2701,7 @@ footer,
   opacity: 1;
   visibility: visible;
   transition: opacity 0.5s ease, visibility 0.5s ease;
+  cursor: pointer !important;
 }
 
 .loading-screen.hidden {
@@ -2723,21 +2755,6 @@ footer,
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin: 0 auto;
-}
-
-/* LOADER CLICKEABLE */
-
-.loading-screen {
-  cursor: pointer !important;
-}
-
-.loading-screen:hover .loading-content {
-  transform: scale(1.02) !important;
-  transition: transform 0.2s ease !important;
-}
-
-.loading-screen .loading-text p:last-child {
-  animation: blink 2s infinite ease-in-out !important;
 }
 
 @keyframes blink {
